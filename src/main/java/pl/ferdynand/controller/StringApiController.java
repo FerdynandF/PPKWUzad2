@@ -1,17 +1,18 @@
 package pl.ferdynand.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import pl.ferdynand.ui.model.response.TextDetails;
 import pl.ferdynand.ui.model.response.ValidateString;
 
 @RestController
 @RequestMapping("api")
 public class StringApiController {
-    @GetMapping(value = "/validate")
-    public StringBuilder paramInfo(@RequestParam(name ="param") String param){
-        return new StringBuilder(ValidateString.tellVariableType(param));
+    @GetMapping(value = "/text/validation/{text}")
+    public ResponseEntity<TextDetails> textValidationInformation(@PathVariable String text){
+        TextDetails returnTextDetails = ValidateString.buildTextDetails(text);
+        return new ResponseEntity<>(returnTextDetails, HttpStatus.OK);
     }
 
 }
