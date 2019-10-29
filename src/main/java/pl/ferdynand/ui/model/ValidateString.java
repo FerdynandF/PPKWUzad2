@@ -1,4 +1,6 @@
-package pl.ferdynand.ui.model.response;
+package pl.ferdynand.ui.model;
+
+import pl.ferdynand.ui.model.response.TextDetails;
 
 public class ValidateString {
 

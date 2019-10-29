@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.ferdynand.ui.model.response.TextDetails;
-import pl.ferdynand.ui.model.response.ValidateString;
+import pl.ferdynand.ui.model.ValidateString;
 
 @RestController
 @RequestMapping("api")
